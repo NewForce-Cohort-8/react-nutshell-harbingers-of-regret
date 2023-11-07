@@ -1,13 +1,26 @@
-import './Nutshell.css';
+
+import { Route, Routes, BrowserRouter } from "react-router-dom"
+import { NavBar } from './components/nav/NavBar';
+import { ApplicationViews } from "./components/Views/ApplicationViews";
+
 
 function Nutshell() {
-  return (
-    <div className="Dashboard">
-      <header className="App-header">
-        <h1>Welcome to Nutshell</h1>
-      </header>
-    </div>
-  );
+  return <BrowserRouter>
+  <Routes>
+  <Route path="*" element={
+
+      <>
+        <NavBar />
+        <ApplicationViews/>
+      </>
+
+
+  } />
+    </Routes>
+</BrowserRouter>
+
 }
 
 export default Nutshell;
+
+
