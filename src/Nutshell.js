@@ -1,7 +1,26 @@
+
+import { Route, Routes, BrowserRouter } from "react-router-dom"
+import { NavBar } from './components/nav/NavBar';
+import { ApplicationViews } from "./components/Views/ApplicationViews";
+
 import React, { useState } from "react";
 import LoginForm from "./Components/LoginForm";
 
 function Nutshell() {
+  return <BrowserRouter>
+  <Routes>
+  <Route path="*" element={
+
+      <>
+        <NavBar />
+        <ApplicationViews/>
+      </>
+
+
+  } />
+    </Routes>
+</BrowserRouter>
+
 const adminUser = {
 	email: "example@example.com", 
 	password: "password"
@@ -40,3 +59,5 @@ const Logout = () => {
 }
 
 export default Nutshell;
+
+
